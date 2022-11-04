@@ -1,0 +1,11 @@
+repos:
+- repo: https://github.com/Infrastrukturait/pre-commit-readmegen
+  rev: v0.3.0
+  hooks:
+  - id: readmegen
+
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.76.0
+  hooks:
+  - id: terraform_fmt
+  - id: terraform_docs
