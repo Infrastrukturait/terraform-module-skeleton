@@ -6,7 +6,7 @@ on:
     - cron: '00 1 * * *'
 
 jobs:
-  docker:
+  update-tf-version:
     runs-on: ubuntu-latest
     steps:
       -
@@ -20,10 +20,10 @@ jobs:
           curl -o .terraform-version -fsSL https://infrastrukturait.github.io/internal-terraform-version/terraform-version
           if git diff --no-patch --exit-code .terraform-version; then
             echo "No changes detected!"
-            echo "::set-output name=create_commit::false"
+            echo "create_commit=false" >> $GITHUB_OUTPUT
           else
             echo "New version detected!"
-            echo "::set-output name=create_commit::true"
+            echo "create_commit=true" >> $GITHUB_OUTPUT
           fi
       -
         name: Git Auto-Commit
