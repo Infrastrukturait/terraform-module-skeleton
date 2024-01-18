@@ -14,7 +14,7 @@ jobs:
       -
         name: Keepalive Github Actions trigger
         uses: gautamkrishnar/keepalive-workflow@v1
-        with: 
+        with:
           commit_message: Automated commit by Keepalive Workflow to keep the repository active
           commit_options: '--no-verify --signoff'
           committer_username: "github-actions[bot]"
